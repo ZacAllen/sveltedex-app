@@ -1,5 +1,9 @@
 <script>
-	let name = 'world';
+	import DexContainer from "./DexContainer.svelte";
+	import Searchbar from "./Searchbar.svelte";
+	// let name = 'world';
+	
 </script>
 
-<h1>Hello {name}!</h1>
+<Searchbar/>
+<DexContainer/>

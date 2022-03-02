@@ -1,0 +1,143 @@
+@font-face {
+    font-family: LemonMilk;
+    src: url('/fonts/LEMONMILK-Medium.otf') format("opentype");
+  }
+
+:root {
+    --mainRed: #F75757;
+    --grass: #54E250;
+    --mainFont: LemonMilk;
+}
+
+body {
+    overflow-x: hidden;
+    padding: 0;
+}
+
+.searchbarContainer {
+    height: 8vh;
+    background-color: var(--mainRed);
+    margin: 0 !important
+}
+.searchbar {
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 1%;
+}
+#pkmnList {
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
+    font-family: var(--mainFont);
+    font-size: 1.5rem;
+    line-height: 0px;
+    width: 100%;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 5px solid white;
+}       #pkmnList:focus {
+            outline: none;
+        }
+[data-svelte-search] label {
+    display: none !important;
+}
+[data-svelte-typeahead] {
+    /* background-color: rgba(0, 0, 0, 0) !important; */
+    background-color: var(--mainRed) !important;
+    
+}
+.svelte-typeahead-list.svelte-typeahead-list {
+    max-height: 30vh !important;
+    overflow-y: scroll;
+}
+
+option {
+    background-color: #54E250;
+}
+::-webkit-calendar-picker-indicator {
+    display: none;/* remove default arrow */
+    visibility: hidden;
+  }
+  .arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 8px;
+    position: relative;
+    float: right;
+  }
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+.dexWindow {
+    height: 80vh;
+    background-color: #F4F4F4;
+    margin: 3%;
+}
+
+#dexImage {
+    width: 45%;
+}
+@media screen and (max-width: 560px) {
+    #dexImage {
+        width: 300px; /*Probably bad practice*/
+    }
+}
+#nameAndNumber {
+    margin: 5%;
+    box-shadow: 10px 5px black;
+    font-family: var(--mainFont);
+}
+.nameTop {
+    background-color: var(--mainRed);
+}
+.name {
+    font-size: 4rem;
+}
+.number {
+    font-size: 3rem;
+}
+@media screen and (max-width: 560px) {
+    .name {
+        font-size: 2rem;
+    } .number {
+        font-size: 2rem;
+    }
+}
+.nameBottom {
+    background-color: white;
+}
+.number {
+    color: white;
+}
+
+#type {
+    margin: 5%;
+    box-shadow: 5px 5px black;
+    background-color: white;
+    font-family: var(--mainFont);
+}
+
+.typeContainer {
+    background-color: var(--grass);
+    margin: 5%;
+    color: white;
+}
+
+#descriptionContainer {
+    background-color: white;
+    max-height: 100%;
+    margin: 5%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.description {
+    color: black;
+    font-size: 24px;
+    font-family: 'Press Start 2P', cursive;
+    margin: 1em;
+    max-height: 100%;
+    overflow: hidden;
+
+}
