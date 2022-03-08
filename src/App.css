@@ -125,6 +125,7 @@ option {
 }
 .nameBottom {
     background-color: white;
+    padding: 10px;
 }
 .number {
     color: white;
@@ -145,6 +146,7 @@ option {
 }
 .typeText {
     font-size: 1.5em;
+    margin: auto;
 }
 
 #descriptionContainer {

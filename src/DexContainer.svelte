@@ -3,6 +3,7 @@
     import NameAndNumber from './NameAndNumber.svelte'
     import Type from './Type.svelte'
     import Description from './Description.svelte'
+    import Stats from './Stats.svelte'
     import axios from 'axios'
     import { onMount } from 'svelte';
     let tempImg = 'PokemonDataset/alakazam.png'
@@ -11,6 +12,7 @@
     let genera = "";
     let type1;
     let type2;
+    let stats;
 
 
     export let selectedPkmn = "";
@@ -21,7 +23,7 @@
             .then(function (response) {
                 var flavortextArray = response.data.flavor_text_entries;
                 var flavortext = "";
-                console.log(response);
+                // console.log(response);
                 for (var i = 0; i < flavortextArray.length; i++) {
                     if (flavortextArray[i].language.name=="en") {
                         flavortext = flavortextArray[i].flavor_text;
@@ -39,7 +41,15 @@
 
                 type1 = selectedPkmnData[0].Type1
                 type2 = selectedPkmnData[0].Type2
-                console.log(selectedPkmnData)
+                stats = {
+                    HP: selectedPkmnData[0].HP,
+                    Attack: selectedPkmnData[0].Attack,
+                    Defense: selectedPkmnData[0].Defense,
+                    SpAtk: selectedPkmnData[0].SpAtk,
+                    SpDef: selectedPkmnData[0].SpDef,
+                    Speed: selectedPkmnData[0].Speed
+                }
+                // console.log(selectedPkmnData)
             })
             .catch(function(error) {
                 console.log(error)
@@ -83,7 +93,9 @@
                         <Description desc={description}/>
                     </Col>
                     <Col lg="4">
-                        <!-- <Stats/> -->
+                        {#if stats}
+                        <Stats stats={stats}/>
+                        {/if}
                     </Col>
                     
                 </Row>

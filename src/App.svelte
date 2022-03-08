@@ -8,7 +8,7 @@
 	let fetchJson = fetch('PokemonDb.json').then(res => res.json())
     .then(pkmn => {
         pkmnData = pkmn;
-        console.log(pkmnData)
+        // console.log(pkmnData)
     });
 	
 </script>
