@@ -5,7 +5,25 @@
 
 :root {
     --mainRed: #F75757;
-    --grass: #54E250;
+    --Grass: #54E250;
+    --Fire: #FF8039;
+    --Normal: #BCA584;
+    --Water: #4576FF;
+    --Electric: #F2F200;
+    --Ice: #88DBFF;
+    --Fighting: #DD0000;
+    --Poison: #A84DFF;
+    --Ground: #DBD87B;
+    --Flying: #ACA0F2;
+    --Psychic: #F79494;
+    --Bug: #C0F251;
+    --Rock: #B7874E;
+    --Ghost: #6C5491;
+    --Dark: #4A4651;
+    --Dragon: #401DD8;
+    --Steel: #B5B5B5;
+    --Fairy: #FFCACA;
+
     --mainFont: LemonMilk;
 }
 
@@ -120,9 +138,13 @@ option {
 }
 
 .typeContainer {
-    background-color: var(--grass);
+    background-color: blue;
     margin: 5%;
+    padding: 5%;
     color: white;
+}
+.typeText {
+    font-size: 1.5em;
 }
 
 #descriptionContainer {

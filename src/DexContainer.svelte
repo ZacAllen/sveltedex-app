@@ -33,6 +33,13 @@
                 number = response.data.pokedex_numbers[0].entry_number + "."
 
                 genera = response.data.genera[7].genus;
+                var selectedPkmnData;
+                
+                selectedPkmnData = data.filter(data => data.Name == selectedPkmn)
+
+                type1 = selectedPkmnData[0].Type1
+                type2 = selectedPkmnData[0].Type2
+                console.log(selectedPkmnData)
             })
             .catch(function(error) {
                 console.log(error)
