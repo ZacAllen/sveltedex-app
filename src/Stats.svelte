@@ -6,17 +6,26 @@
     $:console.log(stats)
     $:if(stats) {
         options = {
+            plotOptions: {
+                bar: {
+                    distributed: true
+                }
+            },
             chart: {
             type: "bar",
+            fontFamily: 'var(--mainFont)'
             },
+            colors: [
+                "#f75757", "#f79757", "#c4c14b", "#577ff7", "#57f757", "#ffacac" 
+            ],
             series: [
             {
-                name: "Stats",
+                name: "Count",
                 data: [stats.HP, stats.Attack, stats.Defense, stats.SpAtk, stats.SpDef, stats.Speed],
             },
             ],
             xaxis: {
-            categories: ["HP", "Attack", "Defense", "SpAtk", "SpDef", "Speed"],
+            categories: ["HP", "Attack", "Defense", "Sp.Atk", "Sp.Def", "Speed"],
             },
         };
     }
@@ -39,5 +48,6 @@
 //   };
 </script>
 
-
-<div use:chart={options} />
+<div class="statsContainer">
+    <div use:chart={options} />
+</div>
