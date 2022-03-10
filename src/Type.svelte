@@ -17,12 +17,12 @@
     <Row>
         <Col id="type">
             <div class="typeContainer text-center">
-                <h1 class="typeText">{type1}</h1>
+                <h4 class="typeText">{type1}</h4>
             </div>
         </Col>
         <Col id="type">
             <div class="typeContainer text-center">
-                <h1 class="typeText">{type2}</h1>
+                <h4 class="typeText">{type2}</h4>
             </div>
         </Col>
     </Row>

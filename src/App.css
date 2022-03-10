@@ -35,7 +35,7 @@ body {
 .searchbarContainer {
     height: 8vh;
     background-color: var(--mainRed);
-    margin: 0 !important
+    margin: 0 !important;
 }
 .searchbar {
     margin-right: 5%;
@@ -67,8 +67,27 @@ body {
 .svelte-typeahead-list.svelte-typeahead-list {
     max-height: 30vh !important;
     overflow-y: scroll;
+    border-radius: 10px;
 }
-
+.svelte-j5n77y.svelte-j5n77y {
+    border-bottom: none !important;
+    background-color: white;
+    
+}
+ul.svelte-j5n77y {
+    margin-top: 2%;
+    box-shadow: 10px 5px black !important;
+}
+.svelte-j5n77y::-webkit-scrollbar {
+    width: 10px;
+}
+.svelte-j5n77y::-webkit-scrollbar-track {
+    background: white;
+}
+.svelte-j5n77y::-webkit-scrollbar-thumb {
+    background: #888;
+}
+  
 option {
     background-color: #54E250;
 }
@@ -89,7 +108,7 @@ option {
     -webkit-transform: rotate(45deg);
   }
 .dexWindow {
-    height: 80vh;
+    /* height: 80vh; */
     background-color: #F4F4F4;
     margin: 3%;
     
@@ -112,7 +131,7 @@ option {
     background-color: var(--mainRed);
 }
 .name {
-    font-size: 4rem;
+    /* font-size: 4rem; */
 }
 .number {
     font-size: 3rem;
@@ -147,7 +166,7 @@ option {
     color: white;
 }
 .typeText {
-    font-size: 1.5em;
+    /* font-size: 1.5em; */
     margin: auto;
 }
 
@@ -165,7 +184,6 @@ option {
     margin: 1em;
     max-height: 100%;
     overflow: hidden;
-
 }
 .statsContainer {
     /* margin-right: 10%; */
@@ -176,6 +194,7 @@ option {
     margin: 5%;
     overflow: hidden;
     border-radius: 10px;
+    /* font-size: 22px; */
 }
 .heightWeight {
     font-family: var(--mainFont);
@@ -190,6 +209,6 @@ option {
 }
 .abilityText {
     font-family: var(--secondaryFont);
-    font-size: 0.5em;
+    font-size: .5em;
     color: white;
 }

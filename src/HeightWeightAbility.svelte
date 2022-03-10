@@ -8,7 +8,7 @@
 </script>
 
 <div id="HWAbilityContainer">
-    <h3 class="heightWeight">height: <span class="heightWeightText">{height}</span></h3>
-    <h3 class="heightWeight">weight: <span class="heightWeightText">{weight}</span></h3>
-    <h3 class="ability text-center">{ability}:<span class="abilityText"><br> {abilityText}</span> </h3>
+    <p class="heightWeight">height: <span class="heightWeightText">{height}</span></p>
+    <p class="heightWeight">weight: <span class="heightWeightText">{weight}</span></p>
+    <h4 class="ability text-center">{ability}:<span class="abilityText"><br> {abilityText}</span> </h4>
 </div>

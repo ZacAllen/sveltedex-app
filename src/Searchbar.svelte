@@ -11,11 +11,22 @@
   
 </script>
 
+<style>
+    #scrollItems {
+        color: rgb(0, 0, 0);
+    }   
+</style>
+
 <Container fluid class="searchbarContainer">
     <Row> 
         <Col>   
                 <div class="searchbar">
-                    <Typeahead {data} {extract}  id="pkmnList" on:select={({detail}) => selectedPkmn = detail.selected}/>
+                    <Typeahead {data} {extract}  let:result id="pkmnList" on:select={({detail}) => selectedPkmn = detail.selected}>
+                        <div id="scrollItems">
+                            {@html result.string}
+                           
+                        </div>
+                    </Typeahead>
                 </div>
         </Col>
     </Row>
