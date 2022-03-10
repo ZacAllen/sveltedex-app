@@ -3,6 +3,7 @@
     import NameAndNumber from './NameAndNumber.svelte'
     import Type from './Type.svelte'
     import Description from './Description.svelte'
+    import HeightWeightAbility from './HeightWeightAbility.svelte';
     import Stats from './Stats.svelte'
     import axios from 'axios'
     import { onMount } from 'svelte';
@@ -10,9 +11,9 @@
     let description = "";
     let number = "";
     let genera = "";
-    let type1;
-    let type2;
+    let type1, type2;
     let stats;
+    let height, weight, ability, abilityText;
 
 
     export let selectedPkmn = "";
@@ -55,6 +56,27 @@
                 console.log(error)
             })
 
+            axios.get('https://pokeapi.co/api/v2/pokemon/' + selectedPkmn.toLowerCase() + '/')
+            .then(function (response) {
+                height = parseFloat(response.data.height * 10).toFixed(1) + " cm";
+                weight = parseFloat(response.data.weight * .01).toFixed(1) + " kg";
+                ability = response.data.abilities[0].ability.name.toUpperCase();
+                axios.get(response.data.abilities[0].ability.url)
+                    .then(function(response) {
+                        var abTextArray = response.data.effect_entries;
+                        for (var i = 0; i < abTextArray.length; i++) {
+                            if (abTextArray[i].language.name=="en") {
+                                abilityText = abTextArray[i].short_effect;
+                            }
+                        }
+                    }).catch(function(error) {
+                        console.log(error)
+                    })
+            })
+            .catch(function(error) {
+                console.log(error)
+            })
+
             tempImg = 'PokemonDataset/' + selectedPkmn + '.png'
     }
     
@@ -68,7 +90,7 @@
             <!-- IMAGE, NAME, AND TYPE -->
                 <Row>
                     <Col class="text-center">
-                        <img id="dexImage" src={tempImg} alt="alakazam">
+                        <img id="dexImage" src={tempImg} alt={tempImg}>
                     </Col>
                     <Col>
                         <Row>
@@ -89,15 +111,17 @@
 
             <!-- DESCRIPTION AND STATS -->
                 <Row>
-                    <Col lg="8">
+                    <Col lg="5">
                         <Description desc={description}/>
                     </Col>
                     <Col lg="4">
                         {#if stats}
                         <Stats stats={stats}/>
                         {/if}
+                    </Col> 
+                    <Col lg="3">
+                        <HeightWeightAbility height={height} weight={weight} ability={ability} abilityText={abilityText}/>
                     </Col>
-                    
                 </Row>
             </div>
         </Col>

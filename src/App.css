@@ -23,7 +23,7 @@
     --Dragon: #401DD8;
     --Steel: #B5B5B5;
     --Fairy: #FFCACA;
-
+    --secondaryFont: 'Press Start 2P', cursive;
     --mainFont: LemonMilk;
 }
 
@@ -92,6 +92,7 @@ option {
     height: 80vh;
     background-color: #F4F4F4;
     margin: 3%;
+    
 }
 
 #dexImage {
@@ -104,7 +105,7 @@ option {
 }
 #nameAndNumber {
     margin: 5%;
-    box-shadow: 10px 5px black;
+    box-shadow: 12px 5px black;
     font-family: var(--mainFont);
 }
 .nameTop {
@@ -140,6 +141,7 @@ option {
 
 .typeContainer {
     background-color: blue;
+    border-radius: 5px;
     margin: 5%;
     padding: 5%;
     color: white;
@@ -158,13 +160,36 @@ option {
 }
 .description {
     color: black;
-    font-size: 24px;
-    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2em;
+    font-family: var(--secondaryFont);
     margin: 1em;
     max-height: 100%;
     overflow: hidden;
 
 }
 .statsContainer {
-    margin-right: 10%;
+    /* margin-right: 10%; */
+}
+#HWAbilityContainer {
+    background-color: var(--mainRed);
+    max-height: 100%;
+    margin: 5%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.heightWeight {
+    font-family: var(--mainFont);
+    margin: 1em;
+}
+.heightWeightText {
+    color: white;
+}
+.ability {
+    font-family: var(--mainFont);
+    margin: 1em;
+}
+.abilityText {
+    font-family: var(--secondaryFont);
+    font-size: 0.5em;
+    color: white;
 }

@@ -24,9 +24,15 @@
                 data: [stats.HP, stats.Attack, stats.Defense, stats.SpAtk, stats.SpDef, stats.Speed],
             },
             ],
-            xaxis: {
-            categories: ["HP", "Attack", "Defense", "Sp.Atk", "Sp.Def", "Speed"],
+            legend: {
+                show: false
             },
+            xaxis: {
+                categories: ["HP", "Attack", "Defense", "Sp.Atk", "Sp.Def", "Speed"],
+            },
+            yaxis: {
+                max:200,
+            }
         };
     }
     
