@@ -23,6 +23,7 @@
     --Dragon: #401DD8;
     --Steel: #B5B5B5;
     --Fairy: #FFCACA;
+    --tertiaryFont: 'Montserrat', sans-serif;
     --secondaryFont: 'Press Start 2P', cursive;
     --mainFont: LemonMilk;
 }
@@ -31,7 +32,28 @@ body {
     overflow-x: hidden;
     padding: 0;
 }
-
+.logoContainer {
+    height: 30vh;
+}
+.landingTitle {
+    font-family: var(--mainFont);
+    font-size: 2em;
+}
+.landingSubtitle {
+    font-family: var(--tertiaryFont);
+    font-size: 20px;
+    color: #606060
+}
+.surpriseMe {
+    margin-top: 10%;
+    font-family: var(--mainFont);
+    font-size: 2em !important;
+    width: 60%;
+    height: 3em;
+    background-color: var(--mainRed) !important;
+    border: none !important;
+    border-radius: 20px !important;
+}
 .searchbarContainer {
     height: 8vh;
     background-color: var(--mainRed);
@@ -40,7 +62,7 @@ body {
 .searchbar {
     margin-right: 5%;
     margin-left: 5%;
-    margin-top: 1%;
+    margin-top: 10px;
 }
 #pkmnList {
     background-color: rgba(0, 0, 0, 0);
@@ -124,14 +146,15 @@ option {
 }
 #nameAndNumber {
     margin: 5%;
-    box-shadow: 12px 5px black;
+    box-shadow: 15px 5px black;
     font-family: var(--mainFont);
 }
 .nameTop {
     background-color: var(--mainRed);
 }
 .name {
-    /* font-size: 4rem; */
+    font-size: 3rem;
+    margin-top: 4px;
 }
 .number {
     font-size: 3rem;

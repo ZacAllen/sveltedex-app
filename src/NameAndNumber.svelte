@@ -8,10 +8,10 @@
 
 <div id="nameAndNumber">
     <Row class="nameTop">
-        <Col lg="3">
+        <Col lg="2">
             <h1 class="number">{number}</h1>
         </Col>
-        <Col lg="9" class="text-center">
+        <Col lg="10" class="">
             <h1 class="name">{name}</h1>
         </Col>
     </Row>

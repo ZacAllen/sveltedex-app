@@ -24,7 +24,6 @@
                     <Typeahead {data} {extract}  let:result id="pkmnList" on:select={({detail}) => selectedPkmn = detail.selected}>
                         <div id="scrollItems">
                             {@html result.string}
-                           
                         </div>
                     </Typeahead>
                 </div>

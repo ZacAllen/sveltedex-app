@@ -5,6 +5,7 @@
     import Description from './Description.svelte'
     import HeightWeightAbility from './HeightWeightAbility.svelte';
     import Stats from './Stats.svelte'
+    import LandingPage from './LandingPage.svelte';
     import axios from 'axios'
     import { onMount } from 'svelte';
     let tempImg = 'PokemonDataset/alakazam.png'
@@ -64,11 +65,21 @@
                 axios.get(response.data.abilities[0].ability.url)
                     .then(function(response) {
                         var abTextArray = response.data.effect_entries;
-                        for (var i = 0; i < abTextArray.length; i++) {
-                            if (abTextArray[i].language.name=="en") {
-                                abilityText = abTextArray[i].short_effect;
+                        var flavorTextArray = response.data.flavor_text_entries;
+                        if (abTextArray.length != 0) {
+                            for (var i = 0; i < abTextArray.length; i++) {
+                                if (abTextArray[i].language.name=="en") {
+                                    abilityText = abTextArray[i].short_effect;
+                                }
+                            }
+                        } else {
+                            for (var k = 0; k < flavorTextArray.length; k++) {
+                                if (flavorTextArray[k].language.name=="en") {
+                                    abilityText = flavorTextArray[k].flavor_text;
+                                }
                             }
                         }
+                        
                     }).catch(function(error) {
                         console.log(error)
                     })
@@ -82,7 +93,10 @@
     
 
 </script>
-
+{#if selectedPkmn == ""}
+<div><LandingPage bind:selectedPkmn={selectedPkmn} data={data}/></div>
+{/if}
+{#if selectedPkmn != ""} 
 <Container fluid>
     <Row>
         <Col>
@@ -127,3 +141,4 @@
         </Col>
     </Row>
 </Container>
+{/if}
