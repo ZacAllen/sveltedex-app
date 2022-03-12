@@ -2,6 +2,7 @@
     import {Container, Row, Col, Button} from 'sveltestrap'
     export let selectedPkmn = "";
     export let data;
+    let logo = 'sveltedex_logo.png'
 
     function selectRandom() {
         selectedPkmn = data[Math.floor(Math.random() * (data.length - 1))].Name;
@@ -11,11 +12,11 @@
 <Container>
     <Row>
         <Col lg="3"></Col>
-        <Col lg="6">
+        <Col lg="6" style="margin-top: 10%;">
             <Row>
                 <Col>
-                    <div class="logoContainer">
-
+                    <div class="logoContainer text-center">
+                        <img id="logo" src={logo} alt="Sveltedex Logo">
                     </div>
                 </Col>
             </Row>

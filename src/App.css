@@ -35,6 +35,9 @@ body {
 .logoContainer {
     height: 30vh;
 }
+#logo {
+    width: 40%;
+}
 .landingTitle {
     font-family: var(--mainFont);
     font-size: 2em;
@@ -82,8 +85,8 @@ body {
     display: none !important;
 }
 [data-svelte-typeahead] {
-    /* background-color: rgba(0, 0, 0, 0) !important; */
-    background-color: var(--mainRed) !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    /* background-color: var(--mainRed) !important; */
     
 }
 .svelte-typeahead-list.svelte-typeahead-list {
