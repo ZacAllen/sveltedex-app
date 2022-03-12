@@ -19,5 +19,9 @@
 		<Searchbar data={pkmnData} bind:selectedPkmn={selectedPkmn}/>
 		<DexContainer data={pkmnData} bind:selectedPkmn={selectedPkmn}/>
 	</Container>
+	<Container fluid>
+		<div class="footer text-center"><p>Created by <a href="https://zachsallen.com" target={'_blank'}>Zach Allen</a></p></div>
+	</Container>
+	
 	
 {/await}

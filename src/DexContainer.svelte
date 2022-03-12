@@ -93,6 +93,24 @@
     
 
 </script>
+<style>
+    .dexWindow {
+        /* height: 80vh; */
+        background-color: #F4F4F4;
+        margin: 3%;
+        
+    }
+
+    #dexImage {
+        width: 45%;
+    }
+    @media screen and (max-width: 560px) {
+        #dexImage {
+            width: 300px; /*Probably bad practice*/
+        }
+    }
+
+</style>
 {#if selectedPkmn == ""}
 <div><LandingPage bind:selectedPkmn={selectedPkmn} data={data}/></div>
 {/if}

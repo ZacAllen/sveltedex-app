@@ -27,11 +27,21 @@
     --secondaryFont: 'Press Start 2P', cursive;
     --mainFont: LemonMilk;
 }
-
+/* ------------------------------------------------------------------GENERAL--------------------------------------------------------------------------------------------- */
 body {
     overflow-x: hidden;
     padding: 0;
 }
+.footer {
+    /* bottom: 0;
+    position: fixed; */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+/* ------------------------------------------------------------------LANDING--------------------------------------------------------------------------------------------- */
 .logoContainer {
     height: 30vh;
 }
@@ -57,184 +67,24 @@ body {
     border: none !important;
     border-radius: 20px !important;
 }
-.searchbarContainer {
-    height: 8vh;
-    background-color: var(--mainRed);
-    margin: 0 !important;
-}
-.searchbar {
-    margin-right: 5%;
-    margin-left: 5%;
-    margin-top: 10px;
-}
-#pkmnList {
-    background-color: rgba(0, 0, 0, 0);
-    color: black;
-    font-family: var(--mainFont);
-    font-size: 1.5rem;
-    line-height: 0px;
-    width: 100%;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    border-bottom: 5px solid white;
-}       #pkmnList:focus {
-            outline: none;
-        }
-[data-svelte-search] label {
-    display: none !important;
-}
-[data-svelte-typeahead] {
-    background-color: rgba(0, 0, 0, 0) !important;
-    /* background-color: var(--mainRed) !important; */
-    
-}
-.svelte-typeahead-list.svelte-typeahead-list {
-    max-height: 30vh !important;
-    overflow-y: scroll;
-    border-radius: 10px;
-}
-.svelte-j5n77y.svelte-j5n77y {
-    border-bottom: none !important;
-    background-color: white;
-    
-}
-ul.svelte-j5n77y {
-    margin-top: 2%;
-    box-shadow: 10px 5px black !important;
-}
-.svelte-j5n77y::-webkit-scrollbar {
-    width: 10px;
-}
-.svelte-j5n77y::-webkit-scrollbar-track {
-    background: white;
-}
-.svelte-j5n77y::-webkit-scrollbar-thumb {
-    background: #888;
-}
-  
-option {
-    background-color: #54E250;
-}
-::-webkit-calendar-picker-indicator {
-    display: none;/* remove default arrow */
-    visibility: hidden;
-  }
-  .arrow {
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 8px;
-    position: relative;
-    float: right;
-  }
-  .down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-  }
-.dexWindow {
-    /* height: 80vh; */
-    background-color: #F4F4F4;
-    margin: 3%;
-    
-}
-
-#dexImage {
-    width: 45%;
-}
 @media screen and (max-width: 560px) {
-    #dexImage {
-        width: 300px; /*Probably bad practice*/
-    }
+    .surpriseMe {
+        font-size: 1.5em !important;
+    }   
 }
-#nameAndNumber {
-    margin: 5%;
-    box-shadow: 15px 5px black;
-    font-family: var(--mainFont);
-}
-.nameTop {
-    background-color: var(--mainRed);
-}
-.name {
-    font-size: 3rem;
-    margin-top: 4px;
-}
-.number {
-    font-size: 3rem;
-}
-@media screen and (max-width: 560px) {
-    .name {
-        font-size: 2rem;
-    } .number {
-        font-size: 2rem;
-    }
-}
-.nameBottom {
-    background-color: white;
-    padding: 10px;
-}
-.number {
-    color: white;
-}
+/* ------------------------------------------------------------------SEARCHBAR--------------------------------------------------------------------------------------------- */
 
-#type {
-    margin: 5%;
-    box-shadow: 5px 5px black;
-    background-color: white;
-    font-family: var(--mainFont);
-}
 
-.typeContainer {
-    background-color: blue;
-    border-radius: 5px;
-    margin: 5%;
-    padding: 5%;
-    color: white;
-}
-.typeText {
-    /* font-size: 1.5em; */
-    margin: auto;
-}
+  /* ------------------------------------------------------------------DEXCONTAINER--------------------------------------------------------------------------------------------- */
 
-#descriptionContainer {
-    background-color: white;
-    max-height: 100%;
-    margin: 5%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.description {
-    color: black;
-    font-size: 1.2em;
-    font-family: var(--secondaryFont);
-    margin: 1em;
-    max-height: 100%;
-    overflow: hidden;
-}
+/* ------------------------------------------------------------------NAME AND NUMBER--------------------------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------TYPE--------------------------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------DESCRIPTION--------------------------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------STATS--------------------------------------------------------------------------------------------- */
 .statsContainer {
     /* margin-right: 10%; */
 }
-#HWAbilityContainer {
-    background-color: var(--mainRed);
-    max-height: 100%;
-    margin: 5%;
-    overflow: hidden;
-    border-radius: 10px;
-    /* font-size: 22px; */
-}
-.heightWeight {
-    font-family: var(--mainFont);
-    margin: 1em;
-}
-.heightWeightText {
-    color: white;
-}
-.ability {
-    font-family: var(--mainFont);
-    margin: 1em;
-}
-.abilityText {
-    font-family: var(--secondaryFont);
-    font-size: .5em;
-    color: white;
-}
+/* ------------------------------------------------------------------H, W, ABILITY--------------------------------------------------------------------------------------------- */

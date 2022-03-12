@@ -13,8 +13,41 @@
     }
 </script>
 
+<style>
+    :global(#type) {
+        margin: 5%;
+        box-shadow: 5px 5px black;
+        background-color: white;
+        font-family: var(--mainFont);
+    }
+
+    .typeContainer {
+        background-color: blue;
+        border-radius: 5px;
+        margin: 5%;
+        padding: 5%;
+        color: white;
+    }
+    .typeText {
+        /* font-size: 1.5em; */
+        margin: auto;
+    }
+    @media screen and (max-width: 560px) {
+    :global(#type) {
+        
+    }
+    :global(#typeContainer) {
+        margin-left: 2%;
+        margin-right: 2%;
+    }   
+    .typeText {
+        font-size: .8em;
+    }
+}
+</style>
+
 <div>
-    <Row>
+    <Row id="typeContainer">
         <Col id="type">
             <div class="typeContainer text-center">
                 <h4 class="typeText">{type1}</h4>
