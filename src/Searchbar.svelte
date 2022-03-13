@@ -16,6 +16,7 @@
         color: rgb(0, 0, 0);
     } 
     :global(.searchbarContainer) {
+        position: fixed;
         height: 8vh;
         background-color: var(--mainRed);
         margin: 0 !important;

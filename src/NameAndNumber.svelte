@@ -45,7 +45,7 @@
 <div id="nameAndNumber">
     <Row class="nameTop">
         <Col lg="3" xs="3">
-            <h1 class="number">{number}</h1>
+            <h1 class="number">{number}.</h1>
         </Col>
         <Col lg="9" xs="9" class="">
             <h1 class="name">{name}</h1>

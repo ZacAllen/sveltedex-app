@@ -15,8 +15,9 @@
     let type1, type2;
     let stats;
     let height, weight, ability, abilityText;
+    let next = "", prev = "";
 
-
+    
     export let selectedPkmn = "";
     export let data;
 
@@ -34,12 +35,12 @@
                 //In future release, have text selectable by version?
                 description = flavortext;
 
-                number = response.data.pokedex_numbers[0].entry_number + "."
+                number = response.data.pokedex_numbers[0].entry_number
 
                 genera = response.data.genera[7].genus;
                 var selectedPkmnData;
                 
-                selectedPkmnData = data.filter(data => data.Name == selectedPkmn)
+                selectedPkmnData = data.filter(data => data.Name.toUpperCase() == selectedPkmn.toUpperCase())
 
                 type1 = selectedPkmnData[0].Type1
                 type2 = selectedPkmnData[0].Type2
@@ -88,19 +89,56 @@
                 console.log(error)
             })
 
+            if (number == 898) {
+                axios.get('https://pokeapi.co/api/v2/pokemon/' + (1) + '/')
+                .then(function (response) {
+                    next = response.data.name;
+                }).catch(function(error) {
+                    console.log(error)
+                })
+            } else {
+                axios.get('https://pokeapi.co/api/v2/pokemon/' + (number + 1) + '/')
+                .then(function (response) {
+                    next = response.data.name;
+                }).catch(function(error) {
+                    console.log(error)
+                })
+            }
+            if (number == 1) {
+                axios.get('https://pokeapi.co/api/v2/pokemon/' + (898) + '/')
+                .then(function (response) {
+                    prev = response.data.name;
+                }).catch(function(error) {
+                    console.log(error)
+                })
+            } else {
+                axios.get('https://pokeapi.co/api/v2/pokemon/' + (number - 1) + '/')
+                .then(function (response) {
+                    prev = response.data.name;
+                }).catch(function(error) {
+                    console.log(error)
+                })
+            }
+            
+            
+
             tempImg = 'PokemonDataset/' + selectedPkmn + '.png'
     }
     
+    function selectNext() {
+        selectedPkmn = next;
+    }
+    function selectPrev() {
+        selectedPkmn = prev;
+    }
 
 </script>
 <style>
     .dexWindow {
         /* height: 80vh; */
         background-color: #F4F4F4;
-        margin: 3%;
-        
+        margin: 0 3% 3% 3%;
     }
-
     #dexImage {
         width: 45%;
     }
@@ -109,6 +147,16 @@
             width: 300px; /*Probably bad practice*/
         }
     }
+    #nextPrev {
+        margin-top: 9vh;
+        /* position: fixed; */
+    }
+    :global(.nextPrevButton) {
+        background-color: var(--mainRed) !important;
+        font-family: var(--mainFont);
+        border: none !important;
+        border-radius: 5px 5px 0 0  !important;
+    }
 
 </style>
 {#if selectedPkmn == ""}
@@ -116,6 +164,34 @@
 {/if}
 {#if selectedPkmn != ""} 
 <Container fluid>
+    <Row>
+        <Col lg = "7"></Col>
+        <Col lg="4">
+            <div id="nextPrev">
+                <Row>
+                    <Col class="text-center">
+                        {#if (number == 1)}
+                        <Button class="nextPrevButton" on:click={selectPrev}>Prev: #{898} {prev}</Button>
+                        {/if}
+                        {#if (number != 1)}
+                        <Button class="nextPrevButton" on:click={selectPrev}>Prev: #{number - 1} {prev}</Button>
+                        {/if}
+                        
+                    </Col>
+                    <Col class="text-center">
+                        {#if (number == 898)}
+                        <Button class="nextPrevButton" on:click={selectNext}>Next: #{1} {next}</Button>
+                        {/if}
+                        {#if (number != 898)}
+                        <Button class="nextPrevButton" on:click={selectNext}>Next: #{number + 1} {next}</Button>
+                        {/if}
+                        
+                    </Col>
+                </Row>
+            </div>
+        </Col>
+        <Col lg="1"></Col>
+    </Row>
     <Row>
         <Col>
             <div class="dexWindow">

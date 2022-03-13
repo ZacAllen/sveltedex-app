@@ -11921,7 +11921,7 @@
     "Speed": 85
   },
   {
-    "Name": "Tapu Koko",
+    "Name": "Tapu-Koko",
     "Variation": "",
     "Type1": "Electric",
     "Type2": "Fairy",
@@ -11934,7 +11934,7 @@
     "Speed": 130
   },
   {
-    "Name": "Tapu Lele",
+    "Name": "Tapu-Lele",
     "Variation": "",
     "Type1": "Psychic",
     "Type2": "Fairy",
@@ -11947,7 +11947,7 @@
     "Speed": 95
   },
   {
-    "Name": "Tapu Bulu",
+    "Name": "Tapu-Bulu",
     "Variation": "",
     "Type1": "Grass",
     "Type2": "Fairy",
@@ -11960,7 +11960,7 @@
     "Speed": 75
   },
   {
-    "Name": "Tapu Fini",
+    "Name": "Tapu-Fini",
     "Variation": "",
     "Type1": "Water",
     "Type2": "Fairy",
