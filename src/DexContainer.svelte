@@ -9,6 +9,7 @@
     import axios from 'axios'
     import { onMount } from 'svelte';
     let tempImg = 'PokemonDataset/alakazam.png'
+    let name = "";
     let description = "";
     let number = "";
     let genera = "";
@@ -18,11 +19,10 @@
     let next = "", prev = "";
 
     
-    export let selectedPkmn = "";
+    export let selectedPkmn;
     export let data;
-
-    $:if (selectedPkmn) {
-            axios.get('https://pokeapi.co/api/v2/pokemon-species/' + selectedPkmn.toLowerCase() +'/')
+    const loadData = (async () => {
+        axios.get('https://pokeapi.co/api/v2/pokemon-species/' + selectedPkmn.toLowerCase() +'/')
             .then(function (response) {
                 var flavortextArray = response.data.flavor_text_entries;
                 var flavortext = "";
@@ -36,6 +36,38 @@
                 description = flavortext;
 
                 number = response.data.pokedex_numbers[0].entry_number
+                name = selectedPkmn;
+
+                if (number == 898) {
+                    axios.get('https://pokeapi.co/api/v2/pokemon/' + (1) + '/')
+                    .then(function (response) {
+                        next = response.data.name;
+                    }).catch(function(error) {
+                        console.log(error)
+                    })
+                } else {
+                    axios.get('https://pokeapi.co/api/v2/pokemon/' + (number + 1) + '/')
+                    .then(function (response) {
+                        next = response.data.name;
+                    }).catch(function(error) {
+                        console.log(error)
+                    })
+                }
+                if (number == 1) {
+                    axios.get('https://pokeapi.co/api/v2/pokemon/' + (898) + '/')
+                    .then(function (response) {
+                        prev = response.data.name;
+                    }).catch(function(error) {
+                        console.log(error)
+                    })
+                } else {
+                    axios.get('https://pokeapi.co/api/v2/pokemon/' + (number - 1) + '/')
+                    .then(function (response) {
+                        prev = response.data.name;
+                    }).catch(function(error) {
+                        console.log(error)
+                    })
+                }
 
                 genera = response.data.genera[7].genus;
                 var selectedPkmnData;
@@ -89,41 +121,17 @@
                 console.log(error)
             })
 
-            if (number == 898) {
-                axios.get('https://pokeapi.co/api/v2/pokemon/' + (1) + '/')
-                .then(function (response) {
-                    next = response.data.name;
-                }).catch(function(error) {
-                    console.log(error)
-                })
-            } else {
-                axios.get('https://pokeapi.co/api/v2/pokemon/' + (number + 1) + '/')
-                .then(function (response) {
-                    next = response.data.name;
-                }).catch(function(error) {
-                    console.log(error)
-                })
-            }
-            if (number == 1) {
-                axios.get('https://pokeapi.co/api/v2/pokemon/' + (898) + '/')
-                .then(function (response) {
-                    prev = response.data.name;
-                }).catch(function(error) {
-                    console.log(error)
-                })
-            } else {
-                axios.get('https://pokeapi.co/api/v2/pokemon/' + (number - 1) + '/')
-                .then(function (response) {
-                    prev = response.data.name;
-                }).catch(function(error) {
-                    console.log(error)
-                })
-            }
+            
             
             
 
             tempImg = 'PokemonDataset/' + selectedPkmn + '.png'
+    
+    })
+    $:if (selectedPkmn) {
+        loadData();
     }
+            
     
     function selectNext() {
         selectedPkmn = next;
@@ -146,6 +154,12 @@
         #dexImage {
             width: 300px; /*Probably bad practice*/
         }
+        :global(.nextPrevButton) {
+            
+        }
+        .dexWindow {
+            margin: 0 0 15% 0;
+        }
     }
     #nextPrev {
         margin-top: 9vh;
@@ -156,6 +170,8 @@
         font-family: var(--mainFont);
         border: none !important;
         border-radius: 5px 5px 0 0  !important;
+        width: 100%;
+        height: 100%;
     }
 
 </style>
@@ -163,10 +179,13 @@
 <div><LandingPage bind:selectedPkmn={selectedPkmn} data={data}/></div>
 {/if}
 {#if selectedPkmn != ""} 
+{#await loadData}
+<div></div>
+{:then res}
 <Container fluid>
     <Row>
-        <Col lg = "7"></Col>
-        <Col lg="4">
+        <Col lg = "7" md="5"></Col>
+        <Col lg="4" md="6">
             <div id="nextPrev">
                 <Row>
                     <Col class="text-center">
@@ -190,7 +209,7 @@
                 </Row>
             </div>
         </Col>
-        <Col lg="1"></Col>
+        <Col lg="1" md="1"></Col>
     </Row>
     <Row>
         <Col>
@@ -203,7 +222,7 @@
                     <Col>
                         <Row>
                             <Col>
-                                <NameAndNumber name={selectedPkmn} number={number} genera ={genera}/>
+                                <NameAndNumber name={name} number={number} genera ={genera}/>
                             </Col>
                         </Row>
                         <Row>
@@ -235,4 +254,5 @@
         </Col>
     </Row>
 </Container>
+{/await}
 {/if}
