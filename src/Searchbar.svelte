@@ -3,8 +3,13 @@
     import Typeahead from "svelte-typeahead";
     export let data;
     export let selectedPkmn = "";
+    let logo = 'sveltedex_logo.png'
     
   const extract = (pkmn) => pkmn.Name;
+
+    function returnHome() {
+        selectedPkmn = "";
+    }
 
   $:console.log("In searchbar: " + selectedPkmn)
 
@@ -25,6 +30,19 @@
         margin-right: 5%;
         margin-left: 5%;
         margin-top: 10px;
+    }
+    #searchbarLogo {
+        width: 40%;
+        margin-top: 10%;
+        cursor: pointer;
+    }
+    .homeButton {
+       
+    }
+    @media screen and (max-width: 560px) {
+        #searchbarLogo {
+            width: 40px;
+        }
     }
     :global(#pkmnList) {
         background-color: rgba(0, 0, 0, 0);
@@ -82,7 +100,12 @@
 </style>
 
 <Container fluid class="searchbarContainer">
-    <Row> 
+    <Row>
+        <Col lg="1" xs="2" style="margin:auto">
+            <div class="homeButton text-center align-middle">
+                <a on:click={returnHome}><img id="searchbarLogo" src={logo} alt="Sveltedex Logo"></a>
+            </div>
+        </Col> 
         <Col>   
                 <div class="searchbar">
                     <Typeahead {data} {extract}  let:result id="pkmnList" on:select={({detail}) => selectedPkmn = detail.selected.toLowerCase()}>

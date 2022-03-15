@@ -129,6 +129,7 @@
     
     })
     $:if (selectedPkmn) {
+        console.log(selectedPkmn)
         loadData();
     }
             
