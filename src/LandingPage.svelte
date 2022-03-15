@@ -5,7 +5,7 @@
     let logo = 'sveltedex_logo.png'
 
     function selectRandom() {
-        selectedPkmn = data[Math.floor(Math.random() * (data.length - 1))].Name;
+        selectedPkmn = data[Math.floor(Math.random() * (data.length - 1))].Name.toLowerCase();
     }
 </script>
 
