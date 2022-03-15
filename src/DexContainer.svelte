@@ -174,6 +174,9 @@
         width: 100%;
         height: 100%;
     }
+    :global(.nextPrevButton:hover) {
+        background-color: #ffacac !important;
+    }
 
 </style>
 {#if selectedPkmn == ""}
