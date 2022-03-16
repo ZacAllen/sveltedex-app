@@ -23,7 +23,7 @@ Navigate to [localhost:5000](http://localhost:5000).
 
 ## Logs
 #### March 16, 2022
-Replaced header logo with uncropped image, minor adjustments to mobile layout.
+Replaced header logo with uncropped image, minor adjustments to mobile layout.<br/>
 TODO:
 - Full Pokemon list, modal/dropdown?
 - Ability toggle for multiple/hidden abilities
