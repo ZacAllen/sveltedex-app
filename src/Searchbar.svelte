@@ -3,7 +3,7 @@
     import Typeahead from "svelte-typeahead";
     export let data;
     export let selectedPkmn = "";
-    let logo = 'sveltedex_logo.png'
+    let logo = 'logo.png'
     
   const extract = (pkmn) => pkmn.Name;
 

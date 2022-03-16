@@ -2,7 +2,7 @@
     import {Container, Row, Col, Button} from 'sveltestrap'
     export let selectedPkmn = "";
     export let data;
-    let logo = 'sveltedex_logo.png'
+    let logo = 'logo.png'
 
     function selectRandom() {
         selectedPkmn = data[Math.floor(Math.random() * (data.length - 1))].Name.toLowerCase();
