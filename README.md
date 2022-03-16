@@ -24,6 +24,8 @@ Navigate to [localhost:5000](http://localhost:5000).
 ## Logs
 #### March 16, 2022
 Replaced header logo with uncropped image, minor adjustments to mobile layout.<br/>
+BUGS:
+- Some discrepancies (specifically regarding naming + alternate forms) between image database and info database prevent some pokemon's data from displaying
 TODO:
 - Full Pokemon list, modal/dropdown?
 - Ability toggle for multiple/hidden abilities
