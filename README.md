@@ -21,7 +21,7 @@ npm run dev
 
 Navigate to [localhost:5000](http://localhost:5000).
 
-### Logs
+## Logs
 #### March 16, 2022
 Replaced header logo with uncropped image, minor adjustments to mobile layout.
 TODO:
