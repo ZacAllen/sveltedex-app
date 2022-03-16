@@ -177,6 +177,10 @@
     :global(.nextPrevButton:hover) {
         background-color: #ffacac !important;
     }
+    :global(.nextPrevButton:focus) {
+        border: none !important;
+        box-shadow: none !important;
+    }
 
 </style>
 {#if selectedPkmn == ""}

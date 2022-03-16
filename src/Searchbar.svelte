@@ -28,11 +28,11 @@
     }
     .searchbar {
         margin-right: 5%;
-        margin-left: 5%;
+        margin-left: 2%;
         margin-top: 10px;
     }
     #searchbarLogo {
-        width: 40%;
+        width: 80%;
         margin-top: 10%;
         cursor: pointer;
     }
@@ -41,7 +41,14 @@
     }
     @media screen and (max-width: 560px) {
         #searchbarLogo {
-            width: 40px;
+            width: 35px;
+        }
+        .searchbar {
+            margin-left: 5%;
+            margin-top: 0;
+        }
+        :global(#logoContainer) {
+            width: 8.33%;
         }
     }
     :global(#pkmnList) {
@@ -97,16 +104,19 @@
         display: none;/* remove default arrow */
         visibility: hidden;
     }
+    :global(#logoContainer) {
+        width:5%;
+    }
 </style>
 
 <Container fluid class="searchbarContainer">
     <Row>
-        <Col lg="1" xs="2" style="margin:auto">
+        <Col lg="1" xs="2" id="logoContainer" style="margin:auto;">
             <div class="homeButton text-center align-middle">
                 <a on:click={returnHome}><img id="searchbarLogo" src={logo} alt="Sveltedex Logo"></a>
             </div>
         </Col> 
-        <Col>   
+        <Col lg="11" xs="10">   
                 <div class="searchbar">
                     <Typeahead {data} {extract}  let:result id="pkmnList" on:select={({detail}) => selectedPkmn = detail.selected.toLowerCase()}>
                         <div id="scrollItems">
