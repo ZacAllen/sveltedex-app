@@ -21,5 +21,14 @@ npm run dev
 
 Navigate to [localhost:5000](http://localhost:5000).
 
-### Logs/To Do
-
+### Logs
+#### March 16, 2022
+Replaced header logo with uncropped image, minor adjustments to mobile layout.
+TODO:
+- Full Pokemon list, modal/dropdown?
+- Ability toggle for multiple/hidden abilities
+- Loading screen while fetching data
+- Description by generation/region/dex
+- More advanced search functions/filters
+- Some animations, particularly on landing page?
+- Move list?
