@@ -1,12 +1,12 @@
 ## SvelteDex
-
-
+A Pokemon encyclopedia modeled after the in-game Pokedex tool; created with Svelte as frontend framework and hosted
+with Firebase.
+https://sveltedex.web.app
 
 
 ## Running the app locally
 
-Clone the repository
-Install the dependencies...
+Clone the repository and install the dependencies...
 
 ```bash
 cd sveltedex-app
