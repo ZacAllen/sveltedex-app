@@ -29,6 +29,7 @@ BUGS:
 <br/>
 
 TODO:
+- Better styled initial loading page component
 - Full Pokemon list, modal/dropdown?
 - Ability toggle for multiple/hidden abilities
 - Loading screen while fetching data
