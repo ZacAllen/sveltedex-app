@@ -52,7 +52,7 @@ body {
     height: 30vh;
 }
 #logo {
-    width: 40%;
+height: 100%;
 }
 .landingTitle {
     font-family: var(--mainFont);
@@ -72,6 +72,7 @@ body {
     background-color: var(--mainRed) !important;
     border: none !important;
     border-radius: 20px !important;
+    margin-bottom: 10%;
 }
 @media screen and (max-width: 560px) {
     .surpriseMe {

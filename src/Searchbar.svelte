@@ -31,6 +31,7 @@
         margin-right: 5%;
         margin-left: 2%;
         margin-top: 10px;
+        
     }
     #searchbarLogo {
         width: 80%;
@@ -50,6 +51,11 @@
         }
         :global(#logoContainer) {
             width: 8.33%;
+        }
+    }
+    @media screen and (max-width: 1280px) {
+        :global(#pkmnList) {
+            font-size: 1rem !important;
         }
     }
     :global(#pkmnList) {
