@@ -1,6 +1,7 @@
 <script>
     import {Container, Row, Col, Button} from 'sveltestrap'
     import Typeahead from "svelte-typeahead";
+    import List from './List.svelte'
     export let data;
     export let selectedPkmn = "";
     let logo = 'logo.png'
@@ -116,7 +117,7 @@
                 <a on:click={returnHome}><img id="searchbarLogo" src={logo} alt="Sveltedex Logo"></a>
             </div>
         </Col> 
-        <Col lg="11" xs="10">   
+        <Col lg="10" xs="9">   
                 <div class="searchbar">
                     <Typeahead {data} {extract}  let:result id="pkmnList" on:select={({detail}) => selectedPkmn = detail.selected.toLowerCase()}>
                         <div id="scrollItems">
@@ -124,6 +125,11 @@
                         </div>
                     </Typeahead>
                 </div>
+        </Col>
+        <Col lg="1" xs="2">
+            <div>
+                <List></List>
+            </div>
         </Col>
     </Row>
 </Container>
