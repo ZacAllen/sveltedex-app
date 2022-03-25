@@ -163,7 +163,7 @@
         }
     }
     #nextPrev {
-        margin-top: 9vh;
+        margin-top: 11vh;
         /* position: fixed; */
     }
     :global(.nextPrevButton) {
