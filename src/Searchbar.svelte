@@ -58,6 +58,9 @@
         :global(#pkmnList) {
             font-size: 1rem !important;
         }
+        :global(.searchbarContainer) { 
+            height: 10vh;
+    }
     }
     :global(#pkmnList) {
         background-color: rgba(0, 0, 0, 0);

@@ -12,7 +12,7 @@
 <Container>
     <Row>
         <Col lg="3"></Col>
-        <Col lg="6" style="margin-top: 9vh;">
+        <Col lg="6" style="margin-top: 10vh;">
             <Row>
                 <Col>
                     <div class="logoContainer text-center">
