@@ -52,7 +52,7 @@ body {
     height: 30vh;
 }
 #logo {
-    width: 40%;
+    width: 30%;
     /* Magic code for vertically centering Image */
     position: relative;
     top: 50%;
