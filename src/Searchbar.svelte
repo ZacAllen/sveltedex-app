@@ -26,6 +26,7 @@
         height: 8vh;
         background-color: var(--mainRed);
         margin: 0 !important;
+        padding-top: 5px;
     }
     .searchbar {
         margin-right: 5%;

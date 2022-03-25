@@ -52,7 +52,11 @@ body {
     height: 30vh;
 }
 #logo {
-height: 100%;
+    width: 40%;
+    /* Magic code for vertically centering Image */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .landingTitle {
     font-family: var(--mainFont);
@@ -79,7 +83,11 @@ height: 100%;
         font-size: 1.5em !important;
     }   
     .logoContainer {
-        margin-top: 10vh;
+        margin-top: 7vh;
+    }
+    #logo {
+        height: auto;
+        width: 40%;
     }
 }
 /* ------------------------------------------------------------------SEARCHBAR--------------------------------------------------------------------------------------------- */
