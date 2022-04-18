@@ -76,6 +76,10 @@
     }       :global(#pkmnList:focus) {
                 outline: none;
             }
+            :global(#pkmnList::placeholder) {
+                color: white;
+                opacity: 1;
+            }
     :global([data-svelte-search] label) {
         display: none !important;
     }
@@ -129,7 +133,7 @@
         </Col> 
         <Col lg="10" xs="9">   
                 <div class="searchbar">
-                    <Typeahead {data} {extract}  let:result id="pkmnList" on:select={({detail}) => selectedPkmn = detail.selected.toLowerCase()}>
+                    <Typeahead placeholder={'Search...'} {data} {extract}  let:result id="pkmnList" on:select={({detail}) => selectedPkmn = detail.selected.toLowerCase()}>
                         <div id="scrollItems">
                             {@html result.string}
                         </div>
